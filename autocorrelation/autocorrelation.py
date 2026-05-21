@@ -18,10 +18,7 @@ def autocorrelation(series, max_lag):
         for t in range(len(series) - lag):
             autocovariance_at_lag += (series[t] - mean)*(series[t + lag] - mean)
         if var == 0:
-            if lag == 0:
-                autocorr.append(1)
-            else:
-                autocorr.append(0)
+            autocorr.append(1 if lag == 0 else 0)
         else:
             autocorr.append(autocovariance_at_lag / var)   
     assert autocorr[0] == 1
