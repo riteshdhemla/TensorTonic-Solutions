@@ -1,10 +1,11 @@
 import numpy as np
 
-def linear_regression_closed_form(X, y):
+def linear_regression_closed_form(X: list, y: list) -> list:
     """
-    Compute the optimal weight vector using the normal equation.
+    Returns the optimal weight vector as a list.
     """
-    X = np.array(X)
-    y = np.array(y)
-    w = np.linalg.inv(X.T@X)@X.T@y
-    return w
+    # Write code here
+    x = np.array(X)
+    Y = np.array(y)
+    weight = np.linalg.inv(x.T@x)@x.T@Y
+    return weight.tolist()
